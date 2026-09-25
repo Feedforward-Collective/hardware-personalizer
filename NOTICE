@@ -1,0 +1,2 @@
+The ES8311 and ES7210 register sequences in esp32c6_board.h follow Espressif's
+esp_codec_dev drivers, licensed under the Apache License 2.0.

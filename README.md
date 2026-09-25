@@ -45,4 +45,4 @@ build.py                          rebuilds dist/ after any change
 
 ## License
 
-MIT; see [LICENSE](LICENSE).
+MIT; see [LICENSE](LICENSE) and [NOTICE](NOTICE).
