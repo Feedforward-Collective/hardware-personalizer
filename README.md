@@ -42,3 +42,7 @@ build.py                          rebuilds dist/ after any change
 - `starter/ESP32C6_App/esp32c6_board.h` is the single source for the board support file. After editing it or any reference, run `python3 build.py` to copy it into the other sketches and rebuild the ZIP and `PROMPT.md`.
 - Everything in `esp32c6_board.h` and `device.md` was checked on a real device (September 2026, Arduino-ESP32 core 3.3.12, GFX Library for Arduino 1.6.8, U8g2 2.36). Not yet tested: Windows flashing, HTTPS memory use, battery life, the SD card slot.
 - Keep all code out of the `.ino` files. Arduino only runs its Intel-only `ctags` tool on `.ino` code, so this keeps builds working on Apple-silicon Macs without Rosetta.
+
+## License
+
+MIT; see [LICENSE](LICENSE).
