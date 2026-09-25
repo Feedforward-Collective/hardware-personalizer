@@ -29,6 +29,7 @@ REFERENCES = [  # (file, section title in PROMPT.md)
 ]
 STARTER_FILES = ["ESP32C6_App/ESP32C6_App.ino", "ESP32C6_App/app.cpp",
                  "ESP32C6_App/esp32c6_board.h"]
+TOUR_FILE = "Tour/app.cpp"
 
 
 def sync_board_file():
@@ -87,8 +88,9 @@ def build_prompt():
     skill = body((SKILL / "SKILL.md").read_text())
     skill = skill.replace("Everything this skill refers to lives in this skill's folder: `references/` for knowledge, `starter/` for code that is already proven on the device.",
                           "Everything referred to below is included later in this prompt: reference sections for knowledge, and starter files with code that is already proven on the device.")
-    skill = skill.replace("Read `starter/ESP32C6_App/app.cpp` for the shape of an app; read `starter/Demo/app.cpp` when the app animates, uses Wi-Fi, or records sound.",
-                          "Read the starter `app.cpp` (end of this prompt) for the shape of an app.")
+    skill = skill.replace("Read `starter/ESP32C6_App/app.cpp` for the shape of an app. Reuse proven patterns: the demo sections of `starter/Tour/app.cpp` (shake reveal, status colours, flip timer, noise meter, tilt game, arc gauge, reactive face, touch poll, word-wrapped text, rings), and `starter/Demo/app.cpp` for smooth canvas animation, Wi-Fi scanning and sound recording.",
+                          "Read the starter `app.cpp` (end of this prompt) for the shape of an app, and reuse the proven patterns in the demo sections of the **Tour app** (end of this prompt).")
+    skill = skill.replace("A swipeable tour of mini demos lives in `starter/Tour/app.cpp`.", "A swipeable tour of mini demos is the **Tour app** at the end of this prompt.")
     parts = [PREAMBLE, "## Your role and the four phases\n\n" + demote(retarget(skill))]
     for name, title in REFERENCES:
         text = body((SKILL / "references" / name).read_text())
@@ -101,6 +103,8 @@ def build_prompt():
         lang = "cpp"
         starter.append(f"### `{Path(rel).name}`\n\n```{lang}\n{(STARTER / rel).read_text().rstrip()}\n```")
     parts.append("\n\n".join(starter))
+    parts.append("## Tour app\n\nThe on-device tour: an `app.cpp` that replaces the starter's `app.cpp` (same folder, same other two files). Its demo sections are also proven patterns for Phase 3.\n\n"
+                 f"```cpp\n{(STARTER / TOUR_FILE).read_text().rstrip()}\n```")
     out = DIST / "PROMPT.md"
     text = "\n\n".join(parts) + "\n"
     leftover = re.findall(r"references/|starter/", text)

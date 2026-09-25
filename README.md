@@ -32,6 +32,7 @@ hardware-personalizer/            the skill
   starter/ESP32C6_App/            the starter app (every new app starts here)
   starter/SelfTest/               checks every part of the device
   starter/Demo/                   animation, Wi-Fi, recording and tilt examples
+  starter/Tour/                   swipeable on-device tour of 8 mini demos (built on request)
 dist/                             built files: the ZIP and PROMPT.md
 build.py                          rebuilds dist/ after any change
 ```

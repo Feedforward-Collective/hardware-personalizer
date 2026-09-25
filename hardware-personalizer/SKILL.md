@@ -13,6 +13,10 @@ Everything this skill refers to lives in this skill's folder: `references/` for 
 
 Find out who they are and where the device will live before offering ideas: their work or home setting, who will see the screen, and what small daily annoyance, ritual or delight it could serve. Then read [`references/ideas.md`](references/ideas.md) and offer **three** ideas tailored to their answers, each in one sentence with what makes it fun or useful. Mix one easy win, one that uses a surprising sensor, and one stretch. Invite them to remix, combine, or bring their own.
 
+Keep exploring in conversation: describe what each idea would feel like in their day, share the real projects in `ideas.md` that match, and follow their curiosity.
+
+**Tour on the device (only on request).** A swipeable tour of mini demos lives in `starter/Tour/app.cpp`. When they ask to see or try things on the device, or say they'd like to feel what it can do, mention the tour (at most once, if they seem unsure what's possible, as an option). When they want it, list its demos in one line each (shake for a tip, status badge, flip timer, noise meter, tilt marble, live number, desk pet, quick poll), let them pick, trim the `DEMOS` list to their picks, and flash it using Phase 4's path. The tour is just another `app.cpp`. Then return to the conversation: ask what they liked and what it made them think of for their own world.
+
 Done when they have picked a direction, their own or yours.
 
 ## Phase 2: Refine
@@ -32,7 +36,7 @@ Done when you have written a short **app card** (name, one-line purpose, trigger
 ## Phase 3: Build
 
 1. Read [`references/device.md`](references/device.md) in full. It is the contract for the code: the board file's API, screen and memory limits, and code rules.
-2. Read `starter/ESP32C6_App/app.cpp` for the shape of an app; read `starter/Demo/app.cpp` when the app animates, uses Wi-Fi, or records sound.
+2. Read `starter/ESP32C6_App/app.cpp` for the shape of an app. Reuse proven patterns: the demo sections of `starter/Tour/app.cpp` (shake reveal, status colours, flip timer, noise meter, tilt game, arc gauge, reactive face, touch poll, word-wrapped text, rings), and `starter/Demo/app.cpp` for smooth canvas animation, Wi-Fi scanning and sound recording.
 3. Write the app as a single `app.cpp` that includes `esp32c6_board.h`. Put every line of the app in `app.cpp`; the `.ino` file stays as the provided placeholder. Keep secrets (Wi-Fi password, API keys) in clearly marked constants at the top.
 4. Review your code against the **checklist** at the end of `device.md` and fix anything it catches.
 
