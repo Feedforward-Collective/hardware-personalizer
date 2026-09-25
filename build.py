@@ -46,6 +46,8 @@ def build_zip():
         for path in sorted(SKILL.rglob("*")):
             if path.is_file() and path.name != ".DS_Store" and "build" not in path.relative_to(SKILL).parts:
                 z.write(path, Path("hardware-personalizer") / path.relative_to(SKILL))
+        for name in ("LICENSE", "NOTICE"):  # the ZIP travels on its own
+            z.write(ROOT / name, Path("hardware-personalizer") / name)
     return out
 
 
