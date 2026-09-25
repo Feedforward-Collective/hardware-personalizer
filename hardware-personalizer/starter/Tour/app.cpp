@@ -1,4 +1,6 @@
 // Tour: a swipeable set of mini demos that show what the ESP32-C6 device can do.
+// These are deliberately rough sketches of the hardware's abilities, not finished
+// designs: a real app can be far more polished.
 // Swipe left/right (or press KEY / BOOT) to move between demos.
 //
 // To choose which demos appear, edit the DEMOS list near the bottom of this file.

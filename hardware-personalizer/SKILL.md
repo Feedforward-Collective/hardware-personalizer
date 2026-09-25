@@ -15,7 +15,7 @@ Find out who they are and where the device will live before offering ideas: thei
 
 Keep exploring in conversation: describe what each idea would feel like in their day, share the real projects in `ideas.md` that match, and follow their curiosity.
 
-**Tour on the device (only on request).** A swipeable tour of mini demos lives in `starter/Tour/app.cpp`. When they ask to see or try things on the device, or say they'd like to feel what it can do, mention the tour (at most once, if they seem unsure what's possible, as an option). When they want it, list its demos in one line each (shake for a tip, status badge, flip timer, noise meter, tilt marble, live number, desk pet, quick poll), let them pick, trim the `DEMOS` list to their picks, and flash it using Phase 4's path. The tour is just another `app.cpp`. Then return to the conversation: ask what they liked and what it made them think of for their own world.
+**Tour on the device (only on request).** A swipeable tour of mini demos lives in `starter/Tour/app.cpp`. When they ask to see or try things on the device, or say they'd like to feel what it can do, mention the tour (at most once, if they seem unsure what's possible, as an option). When they want it, list its demos in one line each (shake for a tip, status badge, flip timer, noise meter, tilt marble, live number, desk pet, quick poll), let them pick, trim the `DEMOS` list to their picks, and flash it using Phase 4's path. Before they try it, set expectations: these are deliberately rough sketches that show what the hardware can sense and do, not what a finished app looks like; their own app can be far more polished, with considered typography, colour, animation and sound. The tour is just another `app.cpp`. Then return to the conversation: ask what they liked and what it made them think of for their own world.
 
 Done when they have picked a direction, their own or yours.
 
@@ -38,7 +38,8 @@ Done when you have written a short **app card** (name, one-line purpose, trigger
 1. Read [`references/device.md`](references/device.md) in full. It is the contract for the code: the board file's API, screen and memory limits, and code rules.
 2. Read `starter/ESP32C6_App/app.cpp` for the shape of an app. Reuse proven patterns: the demo sections of `starter/Tour/app.cpp` (shake reveal, status colours, flip timer, noise meter, tilt game, arc gauge, reactive face, touch poll, word-wrapped text, rings), and `starter/Demo/app.cpp` for smooth canvas animation, Wi-Fi scanning and sound recording.
 3. Write the app as a single `app.cpp` that includes `esp32c6_board.h`. Put every line of the app in `app.cpp`; the `.ino` file stays as the provided placeholder. Keep secrets (Wi-Fi password, API keys) in clearly marked constants at the top.
-4. Review your code against the **checklist** at the end of `device.md` and fix anything it catches.
+4. Design it properly: the tour demos are rough sketches, and the person's app deserves more. Give it a clear visual hierarchy, a small colour palette, deliberate typography, smooth transitions where they help, and sounds that fit the mood.
+5. Review your code against the **checklist** at the end of `device.md` and fix anything it catches.
 
 Done when every item on the checklist passes and the app card's version-1 features are all in the code.
 

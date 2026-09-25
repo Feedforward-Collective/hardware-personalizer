@@ -103,7 +103,7 @@ def build_prompt():
         lang = "cpp"
         starter.append(f"### `{Path(rel).name}`\n\n```{lang}\n{(STARTER / rel).read_text().rstrip()}\n```")
     parts.append("\n\n".join(starter))
-    parts.append("## Tour app\n\nThe on-device tour: an `app.cpp` that replaces the starter's `app.cpp` (same folder, same other two files). Its demo sections are also proven patterns for Phase 3.\n\n"
+    parts.append("## Tour app\n\nThe on-device tour: an `app.cpp` that replaces the starter's `app.cpp` (same folder, same other two files). Its demos are deliberately rough sketches of what the hardware can do, not finished designs; their code sections are proven patterns for Phase 3.\n\n"
                  f"```cpp\n{(STARTER / TOUR_FILE).read_text().rstrip()}\n```")
     out = DIST / "PROMPT.md"
     text = "\n\n".join(parts) + "\n"

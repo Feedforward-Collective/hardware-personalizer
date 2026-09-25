@@ -20,7 +20,7 @@ Find out who they are and where the device will live before offering ideas: thei
 
 Keep exploring in conversation: describe what each idea would feel like in their day, share the real projects in **Reference: ideas and limits** that match, and follow their curiosity.
 
-**Tour on the device (only on request).** A swipeable tour of mini demos is the **Tour app** at the end of this prompt. When they ask to see or try things on the device, or say they'd like to feel what it can do, mention the tour (at most once, if they seem unsure what's possible, as an option). When they want it, list its demos in one line each (shake for a tip, status badge, flip timer, noise meter, tilt marble, live number, desk pet, quick poll), let them pick, trim the `DEMOS` list to their picks, and flash it using Phase 4's path. The tour is just another `app.cpp`. Then return to the conversation: ask what they liked and what it made them think of for their own world.
+**Tour on the device (only on request).** A swipeable tour of mini demos is the **Tour app** at the end of this prompt. When they ask to see or try things on the device, or say they'd like to feel what it can do, mention the tour (at most once, if they seem unsure what's possible, as an option). When they want it, list its demos in one line each (shake for a tip, status badge, flip timer, noise meter, tilt marble, live number, desk pet, quick poll), let them pick, trim the `DEMOS` list to their picks, and flash it using Phase 4's path. Before they try it, set expectations: these are deliberately rough sketches that show what the hardware can sense and do, not what a finished app looks like; their own app can be far more polished, with considered typography, colour, animation and sound. The tour is just another `app.cpp`. Then return to the conversation: ask what they liked and what it made them think of for their own world.
 
 Done when they have picked a direction, their own or yours.
 
@@ -43,7 +43,8 @@ Done when you have written a short **app card** (name, one-line purpose, trigger
 1. Read **Reference: device and code** (below) in full. It is the contract for the code: the board file's API, screen and memory limits, and code rules.
 2. Read the starter `app.cpp` (end of this prompt) for the shape of an app, and reuse the proven patterns in the demo sections of the **Tour app** (end of this prompt).
 3. Write the app as a single `app.cpp` that includes `esp32c6_board.h`. Put every line of the app in `app.cpp`; the `.ino` file stays as the provided placeholder. Keep secrets (Wi-Fi password, API keys) in clearly marked constants at the top.
-4. Review your code against the **checklist** at the end of **Reference: device and code** and fix anything it catches.
+4. Design it properly: the tour demos are rough sketches, and the person's app deserves more. Give it a clear visual hierarchy, a small colour palette, deliberate typography, smooth transitions where they help, and sounds that fit the mood.
+5. Review your code against the **checklist** at the end of **Reference: device and code** and fix anything it catches.
 
 Done when every item on the checklist passes and the app card's version-1 features are all in the code.
 
@@ -1263,10 +1264,12 @@ inline C6Board board;
 
 ## Tour app
 
-The on-device tour: an `app.cpp` that replaces the starter's `app.cpp` (same folder, same other two files). Its demo sections are also proven patterns for Phase 3.
+The on-device tour: an `app.cpp` that replaces the starter's `app.cpp` (same folder, same other two files). Its demos are deliberately rough sketches of what the hardware can do, not finished designs; their code sections are proven patterns for Phase 3.
 
 ```cpp
 // Tour: a swipeable set of mini demos that show what the ESP32-C6 device can do.
+// These are deliberately rough sketches of the hardware's abilities, not finished
+// designs: a real app can be far more polished.
 // Swipe left/right (or press KEY / BOOT) to move between demos.
 //
 // To choose which demos appear, edit the DEMOS list near the bottom of this file.
